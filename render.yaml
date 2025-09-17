@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: nextjs-socketio-app
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        value: file:./db/production.db
+      - key: PORT
+        value: 3000
